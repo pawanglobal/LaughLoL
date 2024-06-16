@@ -14,6 +14,7 @@ FROM employee_demographics;
 -- < 50000 = 5%
 -- > 50000 = 7%
 -- Finance = 10% Bonus
+
 SELECT first_name, 
 last_name, 
 salary,
@@ -27,3 +28,15 @@ CASE
 	WHEN dept_id = 6 THEN salary * .10
 END bonus
 FROM employee_salary;
+
+-- More practice
+
+SELECT *
+FROM employee_salary;
+
+SELECT CONCAT(first_name,' ',last_name) AS full_name,
+CASE
+	WHEN occupation = 'Office Manager' THEN salary*110
+END salary_with_bonus
+FROM employee_salary;
+	

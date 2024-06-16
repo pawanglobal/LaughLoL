@@ -1,6 +1,7 @@
 -- UNION
--- by default UNION IS DISTINCT
--- or use UNION ALL
+-- by default UNION is DISTINCT or use UNION ALL
+-- The UNION operator is used to combine the result sets of two or more SELECT statements into a single result set.
+-- It removes duplicate rows by default unless UNION ALL is used instead, which retains all rows from all queries, including duplicates
 
 SELECT first_name, last_name, 'Old Man' AS label
 FROM employee_demographics
