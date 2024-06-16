@@ -50,3 +50,27 @@ FROM employee_demographics;
 SELECT first_name, last_name,
 CONCAT(first_name,' ', last_name) AS full_name
 FROM employee_demographics;
+
+-- More practice
+
+SELECT *
+FROM employee_salary;
+
+-- In SQL, you cannot use an alias defined in the SELECT clause directly in the WHERE clause of the same query because the WHERE clause is evaluated 
+-- before the SELECT clause. 
+-- However, you can use the alias in the ORDER BY clause because the ORDER BY clause is evaluated after the SELECT clause.
+-- To solve this issue, you can either:
+-- Repeat the expression in the WHERE clause without using the alias.
+-- Use a subquery or a Common Table Expression (CTE) to first compute the alias and then filter the results.
+
+SELECT UPPER(first_name), LOWER(last_name),
+occupation, LENGTH(occupation) AS len_occupation,
+SUBSTR(first_name, 2, 3)
+FROM employee_salary
+WHERE LENGTH(occupation) = 14 OR LENGTH(occupation) = 12
+ORDER BY len_occupation DESC;
+
+
+
+
+
